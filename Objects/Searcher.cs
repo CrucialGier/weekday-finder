@@ -13,9 +13,6 @@ namespace DaySearcher.Objects
     private static string[] _days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     private static int[] _monthCodesNonLeap = {6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
     private static int[] _monthCodesLeapYear = {5, 1, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
-    private static int _yearCode2015 = 4;
-    private static int _yearCode2013 = 3;
-    private static int _yearCode2009 = 5;
 
     public string GetMonthString()
     {
@@ -51,6 +48,23 @@ namespace DaySearcher.Objects
       return false;
     }
 
+    public int YearCodeFinder(int year)
+    {
+      int yearCode = -2;
+      for (int i = 0; i < year; i++)
+      {
+        if (IsLeapYear(year))
+        {
+          yearCode += 2;
+        }
+        else
+        {
+          yearCode++;
+        }
+      }
+      return yearCode;
+    }
+
     public string GetDay()
     {
 
@@ -65,7 +79,8 @@ namespace DaySearcher.Objects
       {
         monthValue = _monthCodesLeapYear[monthInput - 1];
       }
-      int totalValue = monthValue += dayInput += _yearCode2009;
+
+      int totalValue = monthValue += dayInput += YearCodeFinder(yearInput);
       return _days[totalValue % 7];
     }
   }
