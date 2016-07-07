@@ -8,11 +8,11 @@ namespace DaySearcher.Objects
     public void DaySearcher_2015Only_5()
     {
       Searcher newTestSearcher = new Searcher();
-      newTestSearcher.SetMonthString("7");
-      newTestSearcher.SetDayString("15");
-      newTestSearcher.SetYearString("2015");
+      newTestSearcher.SetMonthString("1");
+      newTestSearcher.SetDayString("1");
+      newTestSearcher.SetYearString("2009");
       // System.Console.WriteLine("result: ");
-      Assert.Equal("Wednesday", newTestSearcher.GetDay());
+      Assert.Equal("Thursday", newTestSearcher.GetDay());
     }
   }
 }

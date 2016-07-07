@@ -14,6 +14,8 @@ namespace DaySearcher.Objects
     private static int[] _monthCodesNonLeap = {6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
     private static int[] _monthCodesLeapYear = {5, 1, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
     private static int _yearCode2015 = 4;
+    private static int _yearCode2013 = 3;
+    private static int _yearCode2009 = 5;
 
     public string GetMonthString()
     {
@@ -63,7 +65,7 @@ namespace DaySearcher.Objects
       {
         monthValue = _monthCodesLeapYear[monthInput - 1];
       }
-      int totalValue = monthValue += dayInput += _yearCode2015;
+      int totalValue = monthValue += dayInput += _yearCode2009;
       return _days[totalValue % 7];
     }
   }
