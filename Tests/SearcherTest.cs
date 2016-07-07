@@ -11,7 +11,7 @@ namespace DaySearcher.Objects
       newTestSearcher.SetMonthString("7");
       newTestSearcher.SetDayString("15");
       // System.Console.WriteLine("result: ");
-      Assert.Equal(20, newTestSearcher.GetDay());
+      Assert.Equal("Wednesday", newTestSearcher.GetDay());
     }
   }
 }
