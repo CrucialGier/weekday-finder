@@ -10,6 +10,7 @@ namespace DaySearcher.Objects
       Searcher newTestSearcher = new Searcher();
       newTestSearcher.SetMonthString("7");
       newTestSearcher.SetDayString("15");
+      newTestSearcher.SetYearString("2015");
       // System.Console.WriteLine("result: ");
       Assert.Equal("Wednesday", newTestSearcher.GetDay());
     }
